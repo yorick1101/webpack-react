@@ -1,19 +1,19 @@
-import './index.css'
+import React  from 'react'
+import ReactDOM from 'react-dom';
+import icon from './test.jpg'
 
-console.log('Hello');
-
-const btn = document.getElementById('btn')
-const num = document.getElementById('num')
-
-btn.addEventListener('click', function(){
-    let a = parseInt(num.innerText, 10);
-    num.innerText = ++a;
-})
-
-
-class Test{
-    #a = 1
+function Welcome(props) {
+    return (
+        <div>
+            <img src={icon} /> 
+            <h1>Hello, {props.name}</h1>
+        </div>
+    );
 }
 
-const tt = new Test()
-console.log(tt.a)
+const element = <Welcome name="Nina" />;
+
+ReactDOM.render(
+    element,
+    document.getElementById('root')
+);
